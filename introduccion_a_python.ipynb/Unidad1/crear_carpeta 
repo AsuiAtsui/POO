@@ -1,0 +1,1011 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPSxdmmxJvNp3pVi+GcSzEH",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AsuiAtsui/POO/blob/MAIN/introduccion_a_python.ipynb/Unidad1/crear_carpeta%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TcYtOU3V9rIl",
+        "outputId": "f754e805-3620-424b-bb11-6dc3ad4af28c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5 Hola Mundo\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Declarar Variables\n",
+        "# En Python no hay necesidad de declarar el tipo de variable\n",
+        "# Cuando se le asigna el valor, automaticamente python ya sabe de que tipo es\n",
+        "# Python es CASE SENSITIVE, es decir que es sensible a mayusculas a la hora de\n",
+        "# declarar variables, por lo tanto no es lo mismo la variable x que la variable X\n",
+        "X=5\n",
+        "msg=\"Hola Mundo\"\n",
+        "print(X, msg)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Python es debilmente tipado, es decir, no hay necesidad de declarar el tipo\n",
+        "# de variable, y además, la misma variable en un momento puede ser entera y en\n",
+        "# otra string o booleana\n",
+        "X=1\n",
+        "print(type (X))\n",
+        "X=\"Hola\"\n",
+        "print(type (X))\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "B5xol4zO-FLA",
+        "outputId": "c72dcbf0-72cd-4fd6-cd5a-2b831d2cca04"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'int'>\n",
+            "<class 'str'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Input es para el ingreso de datos por parte del usuario\n",
+        "variable=input(\"Escribe tu nombre: \")\n",
+        "print(\"Tu nombre es: \", variable)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bmSHtZ5U-I0Y",
+        "outputId": "dd66e601-4493-41f5-a8fa-3e9c9802cc13"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Escribe tu nombre: VALEN\n",
+            "Tu nombre es:  VALEN\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# \\n es para dar un salto de renglon\n",
+        "nom=input(\"¿Me puedes dar tu nombre porfavor? \")\n",
+        "apll=input(\"¿Me puedes dar tu apellido porfavor? \")\n",
+        "print(\"Gracias\")\n",
+        "print(\"\\nTu nombre es\",nom,apll,\".\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FuL5mqFC-Nq6",
+        "outputId": "b239f4f9-cb32-4a91-c08d-9d3f25d02662"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "¿Me puedes dar tu nombre porfavor? valen\n",
+            "¿Me puedes dar tu apellido porfavor? duran\n",
+            "Gracias\n",
+            "\n",
+            "Tu nombre es valen duran .\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# El dato ingresado en input se forma de tipo stirng, y al multiplicar\n",
+        "# lo que hace es concatenarlo 5 veces en este caso\n",
+        "x=input(\"Dame un numero para multiplicar \")\n",
+        "z=x*5\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gscgaXp--Pz4",
+        "outputId": "58e283c6-1b76-4297-9203-26e67c3326c2"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dame un numero para multiplicar 7\n",
+            "77777\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Se especifica el tipo de dato el cual se va a ingresar antes del input\n",
+        "x=int(input(\"Dame un numero para multiplicar \"))\n",
+        "z=x*5\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K1TKaOy--TJ1",
+        "outputId": "61c879d5-7646-46ef-e930-aa53eb367fe3"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dame un numero para multiplicar 9\n",
+            "45\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# El doble asterisco ** es para elevar a una potencia, en este caso al cuadrado\n",
+        "cateto_a=float(input(\"Inserta la longitu del primer cateto: \"))\n",
+        "cateto_b=float(input(\"Inserta la longitu del Segundo cateto: \"))\n",
+        "hipo=(cateto_a**2+cateto_b**2)**.5\n",
+        "print(\"La longitud de la hipotenusa es: \",hipo)\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lfpcBJWv-UBy",
+        "outputId": "2362b7d2-3c9c-4dfa-c99f-d4bc393b44e0"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Inserta la longitu del primer cateto: 8\n",
+            "Inserta la longitu del Segundo cateto: 4\n",
+            "La longitud de la hipotenusa es:  8.94427190999916\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=3000\n",
+        "b=12500\n",
+        "if b>a:\n",
+        "  print(\"b es mayor que a\")\n",
+        "  print(b,\"es mayor que\",a)\n",
+        "else:\n",
+        "  print(\"a es mayor que b\")\n",
+        "  print(a,\"es mayor que\",b)\n",
+        "print(\"Fin del if\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "074fjZ-w-Xd4",
+        "outputId": "46c7dc7b-e099-4596-ae44-73541b36b933"
+      },
+      "execution_count": 37,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "b es mayor que a\n",
+            "12500 es mayor que 3000\n",
+            "Fin del if\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Para evaluar mas de una condición\n",
+        "# elif es una avreviatura de else if\n",
+        "a=3000\n",
+        "b=3000\n",
+        "if b>a:\n",
+        "  print(\"b es mayor que a\")\n",
+        "  print(\"b vale ->\",b)\n",
+        "elif a==b:\n",
+        "  print(\"a es igual que b\")\n",
+        "  print(\"a y b valen ->\",a)\n",
+        "else:\n",
+        "  print (\"a es mayor que b\")\n",
+        "  print(\"a vale ->\",a)\n",
+        "print(\"Fin del if\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SaMHuqPm-ZTi",
+        "outputId": "4d8ec6cc-4487-43a5-c9ec-822ddb19dd0d"
+      },
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "a es igual que b\n",
+            "a y b valen -> 3000\n",
+            "Fin del if\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# if simplificado en una sola linea\n",
+        "# Primero se pone lo que se va a imprimir si la condición que está a su derecha\n",
+        "# Se cumple, si no enseguida se pone el else para hacer la siguiente comparación\n",
+        "x=50\n",
+        "y=60\n",
+        "print(\"x es mayor que y\") if (x>y) else print(\"y es mayor que x\")\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0-sVPzIz-bVx",
+        "outputId": "2191cc56-8e1c-4cb8-fe4b-770c3e36c95a"
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "y es mayor que x\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# el += es una avreviatura de x=x+1\n",
+        "x=1\n",
+        "while x<=10:\n",
+        "  print(x)\n",
+        "  x+=1\n",
+        "print(\"Fuera del while\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dl8X3Aab-dAx",
+        "outputId": "e629e3fb-9dbf-40a5-a970-157e625bb1fb"
+      },
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n",
+            "9\n",
+            "10\n",
+            "Fuera del while\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Dentro del while se puede agrergar un break\n",
+        "# Este hace que se salga del ciclo independientemente de la condición inicial\n",
+        "x=1\n",
+        "while x<=1000:\n",
+        "  print(x)\n",
+        "  if x==10:\n",
+        "    print(\"Entro en el if\")\n",
+        "    break\n",
+        "  x+=1\n",
+        "print(\"Fuera del while\")\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HjeSjJ_X-eiR",
+        "outputId": "a37a8a33-8d75-4a25-fceb-e1198f3fb3c5"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n",
+            "9\n",
+            "10\n",
+            "Entro en el if\n",
+            "Fuera del while\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Las tres comillas sirven para hacer un texto largo de multiples lineas\n",
+        "while(True):\n",
+        "  print(\"\"\"Selecciona una opción\n",
+        "  1) Opción 1\n",
+        "  2) Opción 2\n",
+        "  3) Salir\"\"\")\n",
+        "  opcion=input(\"¿Que opcion deseas?\")\n",
+        "  if opcion=='1':\n",
+        "    print(\"Seleccionaste la opción 1\\n\")\n",
+        "  elif opcion=='2':\n",
+        "    print(\"Seleccionaste la opción 2\\n\")\n",
+        "  elif opcion=='3':\n",
+        "    print(\"Seleccionaste salir\\n\")\n",
+        "    break\n",
+        "  else:\n",
+        "    print(\"Opción desconocida, ingresa una opción de la lista\")\n",
+        "print(\"Fuera del ciclo\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UMueyJnv-ggs",
+        "outputId": "8bd8de6f-9609-4d92-8b31-4d05bc3e0d96"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Selecciona una opción\n",
+            "  1) Opción 1\n",
+            "  2) Opción 2\n",
+            "  3) Salir\n",
+            "¿Que opcion deseas?2\n",
+            "Seleccionaste la opción 2\n",
+            "\n",
+            "Selecciona una opción\n",
+            "  1) Opción 1\n",
+            "  2) Opción 2\n",
+            "  3) Salir\n",
+            "¿Que opcion deseas?3\n",
+            "Seleccionaste salir\n",
+            "\n",
+            "Fuera del ciclo\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Si no es especifica el rango inicial por default empieza en cero\n",
+        "# Cuando se establece el limite o rango final siempre será ese valor menos 1\n",
+        "for x in range(5):\n",
+        "  print(x)\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LEhQ2Scb-iPn",
+        "outputId": "5bd4b62a-2432-4fe3-b943-91f1a6629aef"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for z in range(2,5):\n",
+        "  print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ugaoCh8b-jvB",
+        "outputId": "2a555172-d0d1-4c64-eea6-c871b6116741"
+      },
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "3\n",
+            "4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# El tercer parametro es para el incremento\n",
+        "for z in range(1,25,2):\n",
+        "  print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rJpZzMkH-q-T",
+        "outputId": "a8189a92-3019-4c9f-ddd8-2e76dd02930e"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "3\n",
+            "5\n",
+            "7\n",
+            "9\n",
+            "11\n",
+            "13\n",
+            "15\n",
+            "17\n",
+            "19\n",
+            "21\n",
+            "23\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# continue se comporta como si el programa hubiera llegado al final del cuerpo\n",
+        "# de esa iteración\n",
+        "print(\"La instrucción break\")\n",
+        "variablez=True # Variable de tipo booleana\n",
+        "for x in range(1,6):\n",
+        "  print(\"Esto es un print dentro del for\")\n",
+        "  if variablez: # Se compara el valor booleano de la variable para entrar al if\n",
+        "    print(\"Entró al if\")\n",
+        "    break\n",
+        "print(\"Fuera del for\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6z4Fealm-uNk",
+        "outputId": "d68e9284-d279-4025-8489-7d25fd296f51"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "La instrucción break\n",
+            "Esto es un print dentro del for\n",
+            "Entró al if\n",
+            "Fuera del for\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nLa instrucción continue:\")\n",
+        "for x in range(1,6):\n",
+        "  if x==3:\n",
+        "    continue\n",
+        "  print(\"Dentro del bucle #\",x)\n",
+        "print(\"Fuera del bucle.\")\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HnvBuNVN-uxC",
+        "outputId": "11af9305-b6fe-4cc9-cebb-5e0be9516c3b"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "La instrucción continue:\n",
+            "Dentro del bucle # 1\n",
+            "Dentro del bucle # 2\n",
+            "Dentro del bucle # 4\n",
+            "Dentro del bucle # 5\n",
+            "Fuera del bucle.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# El for puede recorrer los valores de un vector, en este caso asignando a x\n",
+        "# el valor que se encuentra dentro del vector\n",
+        "frutas=[\"platano\",\"naranja\",\"manzana\"]\n",
+        "for x in frutas:\n",
+        "  print(x)\n",
+        "  if x==\"naranja\":\n",
+        "    break"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eBQ4jX-D-zGO",
+        "outputId": "a8d02054-85ff-46c8-9c53-71582191b1dd"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "platano\n",
+            "naranja\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# else tambien puede ser una linea extra que se puede agregar al final de un ciclo\n",
+        "n=0\n",
+        "while n!=3:\n",
+        "  print(n)\n",
+        "  n+=1\n",
+        "else:\n",
+        "  print(n,\"else\")\n",
+        "print() #Para generar una linea en blanco\n",
+        "for x in range (0,3):\n",
+        "  print(x)\n",
+        "else:\n",
+        "  print(x,\"else\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vS1RWrvG-0Mh",
+        "outputId": "2cd25170-b068-48d8-f4a5-6e38a9369d28"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0\n",
+            "1\n",
+            "2\n",
+            "3 else\n",
+            "\n",
+            "0\n",
+            "1\n",
+            "2\n",
+            "2 else\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# La palabra clave def sirve para declarar funciones\n",
+        "def funcion_saludar():\n",
+        "  print(\"Hola mundo, desde mi función\")"
+      ],
+      "metadata": {
+        "id": "xwW4z9OM-34K"
+      },
+      "execution_count": 23,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "funcion_saludar()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xOzgi_l6-55s",
+        "outputId": "f538fdb0-36da-48fd-9325-8ec5770d662e"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hola mundo, desde mi función\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Parametros en funciones\n",
+        "def tablas_multiplicar(x):\n",
+        "  for z in range (1,11):\n",
+        "    print(x,\"por\",z,\"=\",x*z)\n",
+        "  print(\"\\nFin de la función\")\n",
+        ""
+      ],
+      "metadata": {
+        "id": "7yZaW6tx-9UX"
+      },
+      "execution_count": 21,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tablas_multiplicar(7)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "m6dLtE6u--Oz",
+        "outputId": "030ae564-469b-40e5-a0e4-a08271fb5869"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "7 por 1 = 7\n",
+            "7 por 2 = 14\n",
+            "7 por 3 = 21\n",
+            "7 por 4 = 28\n",
+            "7 por 5 = 35\n",
+            "7 por 6 = 42\n",
+            "7 por 7 = 49\n",
+            "7 por 8 = 56\n",
+            "7 por 9 = 63\n",
+            "7 por 10 = 70\n",
+            "\n",
+            "Fin de la función\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Se crea un metodo con parámetros\n",
+        "def presentar(nombre,apellido,edad):\n",
+        "    print(\"Hola, mi nombre es\",nombre,apellido,\"y mi edad es\",edad)\n",
+        "presentar(\"Luke\",\"Skywalker\",40)\n",
+        "presentar(\"Clark\",\"Kent\",35)\n",
+        "presentar(\"John\",\"Oveja\",35)\n",
+        "presentar(\"Juan\",35,\"Penas\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cdiBOH6_-_5S",
+        "outputId": "050ac675-3bf1-45cd-9bfb-35ba9b28d3d6"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hola, mi nombre es Luke Skywalker y mi edad es 40\n",
+            "Hola, mi nombre es Clark Kent y mi edad es 35\n",
+            "Hola, mi nombre es John Oveja y mi edad es 35\n",
+            "Hola, mi nombre es Juan 35 y mi edad es Penas\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Se manda un parametro del metodo con un valor ya establecido\n",
+        "def presentar(nombre,apellido=\"Rodríguez\"):\n",
+        "    print(\"Hola, mi nombre es\",nombre,apellido)\n",
+        "presentar(\"Juan\",\"Salazar\")\n",
+        "presentar(\"Juan\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kNwpK7iR_Ddu",
+        "outputId": "e3be938e-e102-410b-99eb-88d847b3bfb6"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hola, mi nombre es Juan Salazar\n",
+            "Hola, mi nombre es Juan Rodríguez\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# La posición no es relevante al colocar los argumentos\n",
+        "def presentar(nombre,apellido):\n",
+        "    print(\"Hola, mi nombre es\",nombre,apellido)\n",
+        "presentar(nombre=\"James\",apellido=\"Bond\")\n",
+        "presentar(apellido=\"Skywalker\",nombre=\"Luke\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wS584oPu_FGs",
+        "outputId": "9423c722-e7ea-4645-d194-546b2bc3e254"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hola, mi nombre es James Bond\n",
+            "Hola, mi nombre es Luke Skywalker\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# La instruccion return termina la función\n",
+        "def calcularDoble(num):\n",
+        "    num=num*2\n",
+        "    return num"
+      ],
+      "metadata": {
+        "id": "78tPfpSC_HKD"
+      },
+      "execution_count": 13,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Valor_al_doble=calcularDoble(5)\n",
+        "print(Valor_al_doble)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XUVmtwSQ_JpC",
+        "outputId": "1a784838-a040-4911-8a35-cc829261df23"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# La variable solo existe dentro de la función\n",
+        "def miFuncion():\n",
+        "    variablex=123\n",
+        "miFuncion()\n",
+        "print(variablex)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 176
+        },
+        "id": "oLFh_IkH_LqM",
+        "outputId": "7857129a-cea3-4055-86ad-4073009e9ed1"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "NameError",
+          "evalue": "name 'variablex' is not defined",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipython-input-869238758.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      3\u001b[0m     \u001b[0mvariablex\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;36m123\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mmiFuncion\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 5\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mvariablex\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mNameError\u001b[0m: name 'variablex' is not defined"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def miFuncion():\n",
+        "    variable=2\n",
+        "    print(\"¿Valor de la variable?\",variable)\n",
+        "variable=1\n",
+        "print(\"Valor de la variable\",variable)\n",
+        "miFuncion()\n",
+        "print(\"Valor de la variable\",variable)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "h93etEGa_O29",
+        "outputId": "4b9addb2-8ade-4e3c-9c55-7069f684cbb5"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Valor de la variable 1\n",
+            "¿Valor de la variable? 2\n",
+            "Valor de la variable 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Con la instrucción global se define una variable de ese modo\n",
+        "def miFuncion():\n",
+        "    global variable\n",
+        "    variable=2\n",
+        "    print(\"¿Valor de la variable?\",variable)\n",
+        "variable=1\n",
+        "print(\"Valor de la variable\",variable)\n",
+        "miFuncion()\n",
+        "print(\"Valor de la variable\",variable)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uOFwPQkh_P11",
+        "outputId": "d0cb2179-d23d-4f0c-f66e-3e722f5871c8"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Valor de la variable 1\n",
+            "¿Valor de la variable? 2\n",
+            "Valor de la variable 2\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
