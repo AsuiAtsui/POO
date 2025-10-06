@@ -1,0 +1,351 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNcXuiWZ2zjSlymSziuA7NC",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AsuiAtsui/POO/blob/MAIN/Untitled6.ipynb/Unidad1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "vePphVR37fUt"
+      },
+      "outputs": [],
+      "source": [
+        "# Se define la clase libro\n",
+        "# self es una referencia al objeto actual (es decir, a si mismo)\n",
+        "# Se utiliza para acceder a los atributos y métodos de la clase desde dentro\n",
+        "# __init()__() es un método especial llamado \"Constructor\"\n",
+        "# Se ejecuta automaticamente cuando se crea una nueva instancia (objeto) de la clase\n",
+        "# Sirve para inicilizar los atributos del objeto con los valores que se le pasen\n",
+        "class Libro:\n",
+        "  def __init__(self,isbn,titulo,autor,categoria,precio): # Constructor de la clase\n",
+        "    self.isbn=isbn\n",
+        "    self.titulo=titulo\n",
+        "    self.autor=autor\n",
+        "    self.categoria=categoria\n",
+        "    self.precio=precio\n",
+        "    self.prestado = False\n",
+        "\n",
+        "  def mostrar_info(self): # Metodo\n",
+        "  # f significa que se le va a dar un formato\n",
+        "  # lo que esta entre llaves es una variable\n",
+        "    estado=\"Prestado\" if self.prestado else \"Disponible\"\n",
+        "    print(f\"[{self.isbn}] {self.titulo} - {self.autor} | {self.categoria} | ${self.precio} | {estado}\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Estudiante:\n",
+        "  def __init__(self,num_control,nombre,carrera,fecha_nacimiento,telefono,correo):\n",
+        "    self.num_control=num_control\n",
+        "    self.nombre=nombre\n",
+        "    self.carrera=carrera\n",
+        "    self.fecha_nacimiento=fecha_nacimiento\n",
+        "    self.telefono=telefono\n",
+        "    self.correo=correo\n",
+        "\n",
+        "  def mostrar_info(self):\n",
+        "    print(f\"[{self.num_control}] {self.nombre} - {self.carrera} | Nac: {self.fecha_nacimiento} | Tel: {self.telefono} | correo: {self.correo}\")\n",
+        ""
+      ],
+      "metadata": {
+        "id": "0olDUc-Yq9cg"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Se crean una instancia concreta de una clase, con datos especificos\n",
+        "libro1=Libro(\"Cien Años de Soledad\", \"Gabriel García Marquez\",\n",
+        "             \"9780307474728\",350.00)\n",
+        "libro2=Libro(\"1984\",\"George Orwell\",\"9780451524935\",220.50)"
+      ],
+      "metadata": {
+        "id": "z3d5X4bFq9jj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(libro1.mostrar_info())\n",
+        "print(libro2.mostrar_info())"
+      ],
+      "metadata": {
+        "id": "EcXV1FRQq9no"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Prestamo:\n",
+        "  contador_prestamos=1\n",
+        "  def __init__(self,num_control,isbn,fecha_inicio,fecha_termino):\n",
+        "    self.folio=Prestamo.contador_prestamos\n",
+        "    Prestamo.contador_prestamos+=1\n",
+        "    self.num_control=num_control\n",
+        "    self.isbn=isbn\n",
+        "    self.fecha_inicio=fecha_inicio\n",
+        "    self.fecha_termino=fecha_termino\n",
+        "\n",
+        "  def verificar_estado(self):\n",
+        "    return f\"{self.libro}, lo tiene {self.cliente} - desde {self.fecha_inicio} - hasta {self.fecha_devolucion}\"\n",
+        "  def renovar_prestamo(self):\n",
+        "    return f\"Se renueva el prestamo hasta el {self.fecha_devolucion}\""
+      ],
+      "metadata": {
+        "id": "9xIerLpqq9rn"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "prestamo1=Prestamo(\"La guerra de los mundos\",\"Manuel Arturo Coronado\",\"10/09/25\",\"20/09/25\")\n",
+        "prestamo2=Prestamo(\"El libro troll\",\"Eduardo Kbezuko\",\"20/08/25\",\"18/09/25\")"
+      ],
+      "metadata": {
+        "id": "KM7Nwm9wq9uC"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Cliente:\n",
+        "  def __init__(self,email):\n",
+        "    self.email=email\n",
+        "  def comprar_libro(self):\n",
+        "    return f\"el cliente con correo {self.email} compro un libro\"\n",
+        "  def consultar_historia(self):\n",
+        "    return f\"el correo asociado {self.email} cuenta con cierto historial\"\n",
+        ""
+      ],
+      "metadata": {
+        "id": "hacr_sHuq9wE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "cliente1=Cliente(\"hackermanjackson@gmail.com\")\n",
+        "cliente2=Cliente(\"iamtheboss420@gmail.com\")"
+      ],
+      "metadata": {
+        "id": "obkWEylZq9zz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(cliente1.comprar_libro())\n",
+        "print(cliente2.consultar_historia())"
+      ],
+      "metadata": {
+        "id": "kV8GeM8Fq92M"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Venta:\n",
+        "  def __init__(self,cliente,libros,total,fecha):\n",
+        "    self.cliente=cliente\n",
+        "    self.libros=libros\n",
+        "    self.total=total\n",
+        "    self.fecha=fecha\n",
+        "  def calcular_total(self):\n",
+        "    return f\"el total de la venta es de ${self.total}\"\n",
+        "  def generar_ticket(self):\n",
+        "    return f\"{self.fecha}\\ncliente: {self.cliente}\\nLibros: {self.libros}\\nTotal de venta: ${self.total}\"\n",
+        ""
+      ],
+      "metadata": {
+        "id": "8T3Z0k5hrVhm"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "venta1=Venta(\"Uriel Lerma\",\"Red Dead Redemption 3\",250.00,\"30/09/25\")\n",
+        "venta2=Venta(\"Kenni Galindo\",\"FNAF 38\",300.00,\"23/07/25\")"
+      ],
+      "metadata": {
+        "id": "NefoFcb8rVmM"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(venta1.generar_ticket())\n",
+        "print(venta2.calcular_total())"
+      ],
+      "metadata": {
+        "id": "LkCP8wDDrVpq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Persona:\n",
+        "  def __init__(self,nombre):\n",
+        "    self.nombre=nombre\n",
+        ""
+      ],
+      "metadata": {
+        "id": "CpMJtve6rbcp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Trabajador:\n",
+        "  def __init__(self,puesto):\n",
+        "    self.puesto=puesto\n",
+        "  def registrar_venta(self)\n",
+        "      return \"Se registro la venta\"\n",
+        "  def gestionar_inventario(self)\n",
+        "      return \"Se cuenta con determinado inventario\"\n",
+        ""
+      ],
+      "metadata": {
+        "id": "EW6LqkDNrbgu"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def devolver_libro():\n",
+        "    print(\"\\n--- Devolver Libro ---\")\n",
+        "    try:\n",
+        "        folio = int(input(\"Folio del préstamo a devolver: \"))\n",
+        "    except ValueError:\n",
+        "        print(\"Folio inválido.\")\n",
+        "        return\n",
+        "\n",
+        "    prestamo = next((p for p in prestamos if p.folio == folio), None)\n",
+        "    if not prestamo:\n",
+        "        print(\"Préstamo no encontrado.\")\n",
+        "        return\n",
+        "\n",
+        "    libro = next((l for l in libros if l.isbn == prestamo.isbn), None)\n",
+        "    if libro:\n",
+        "        libro.prestado = False\n",
+        "        prestamos.remove(prestamo)\n",
+        "        print(f\"Libro '{libro.titulo}' devuelto correctamente.\")\n",
+        "    else:\n",
+        "        print(\"Libro no encontrado.\")"
+      ],
+      "metadata": {
+        "id": "heFQe3G3rbjd"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def registrar_venta():\n",
+        "    print(\"\\n--- Registrar Venta ---\")\n",
+        "    isbn = input(\"ISBN del libro a vender: \")\n",
+        "    libro = next((l for l in libros if l.isbn == isbn), None)\n",
+        "    if not libro:\n",
+        "        print(\"Libro no encontrado.\")\n",
+        "        return\n",
+        "\n",
+        "    try:\n",
+        "        cantidad = int(input(\"Cantidad a vender (solo 1 por ahora): \"))\n",
+        "        if cantidad != 1:\n",
+        "            print(\"Solo se permite vender 1 unidad.\")\n",
+        "            return\n",
+        "    except ValueError:\n",
+        "        print(\"Cantidad inválida.\")\n",
+        "        return\n",
+        "\n",
+        "    num_control = input(\"Número de control del comprador (999999 si es público general): \")\n",
+        "    if num_control != \"999999\":\n",
+        "        estudiante = next((e for e in estudiantes if e.num_control == num_control), None)\n",
+        "        if not estudiante:\n",
+        "            print(\"Estudiante no encontrado.\")\n",
+        "            return\n",
+        "\n",
+        "    fecha = input(\"Fecha de la venta (dd/mm/aaaa): \")\n",
+        "    importe = libro.precio * cantidad\n",
+        "    venta = Venta(isbn, num_control, fecha, cantidad, importe)\n",
+        "    ventas.append(venta)\n",
+        "    libros.remove(libro)\n",
+        "    print(f\"Venta registrada. Folio: {venta.folio_venta}\")\n",
+        ""
+      ],
+      "metadata": {
+        "id": "DfckhmRArblQ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def mostrar_historial_ventas():\n",
+        "    print(\"\\n--- Historial de Ventas ---\")\n",
+        "    if not ventas:\n",
+        "        print(\"No hay ventas registradas.\")\n",
+        "    else:\n",
+        "        for v in ventas:\n",
+        "            v.mostrar_info()"
+      ],
+      "metadata": {
+        "id": "hHFfc2B9rbnk"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
